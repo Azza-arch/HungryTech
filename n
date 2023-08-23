@@ -1,0 +1,226 @@
+
+<?php
+session_start(); // start the session
+
+if (isset($_SESSION['customer_id'])) {
+    // customer ID is set, do something with it
+    $customer_id = $_SESSION['customer_id'];
+} else {
+    // customer ID is not set, redirect to login page
+    header('Location: login.php');
+    exit();
+}
+include "connectdb.php"; // include database connection code
+
+$sql = "SELECT * FROM food_data "; // select data from the customer table based on customer_id
+$result = $conn->query($sql); // execute the query
+?>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+  <link rel="stylesheet" href="mainstyle.css">
+    <title>MENU</title>
+</head>
+<body>
+<header>
+    <nav class="navbar">
+        <a href="#" class="logo">NDAT</a>
+        <div class="menu">
+            <ul class="list">
+                <li><a href="ndatmain.php">Home</a></li>
+                <li><a href="#">Menu</a></li>
+                <li><a href="profile.php"><img src=""></a></li>
+                <li><a href="logout.php">Log-out</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
+<br>
+<form method="POST" action="insertorder.php" onsubmit="return data_validate();">
+    <table><br><br><br>
+                <div>
+                    <h3>Food</h3><hr>
+                </div>
+        <td>
+            <!-- <div class="mat">
+                <img src="nasdag.jpg" class="rounded-image" name="item_name"  id="item_name">
+                <input class="bang" type="number" name="M01-1" id="ndi" min="0">
+            </div>
+        </td>
+        <td>
+            <div class="comment">
+                <p>Nasi Dagang Ikan<br>RM 5.50</p>
+                <a href="comment.php" class="comment" name="nasidagangayam">komeng</a>
+            </div>
+        </td>
+        </tr>
+        <tr>
+            <td>
+            <div class="mat">
+            <img src="nasdag.jpg" class="rounded-image" alt="Item Name" id="item_name">
+            <input class="bang" type="number" name="M02-1" id="nda" min="0">
+            </div>
+            </td>
+            <td>
+                <div class="comment">
+                    <p>Nasi Dagang Ayam Goreng<br>RM 7.50</p>
+                    <a href="comment.php" class="comment" name="nasidagangikan">komeng</a>
+                </div>
+            </td>
+        </tr>
+
+        <td>
+            <div class="mat">
+                <img src="nasdag.jpg" class="rounded-image" name="item_name"  id="item_name">
+                <input class="bang" type="number" name="nasidagangikan+ayam" id="ndia" min="0">
+            </div>
+        </td>
+        <td>
+            <div class="comment">
+                <p>Nasi Dagang Ikan + Ayam<br>RM 8.50</p>
+                <a href="comment.php" class="comment" name="nasidagangikan+ayam">komeng</a>
+            </div>
+        </td>
+        </tr>
+        <tr>
+            <td>
+            <div class="mat">
+            <img src="nasdag.jpg" class="rounded-image" alt="Item Name" id="item_name">
+            <input class="bang" type="number" name="nasidagangikan+telur" id="ndit" min="0">
+            </div>
+            </td>
+            <td>
+                <div class="comment">
+                    <p>Nasi Dagang Ikan + Telur<br>RM 6.50</p>
+                    <a href="comment.php" class="comment" name="nasidagangikan+telur">komeng</a>
+                </div>
+            </td>
+        </tr>
+        <td>
+            <div class="mat">
+                <img src="nasdag.jpg" class="rounded-image" name="item_name"  id="item_name">
+                <input class="bang" type="number" name="nasiminyakgulaidaging" id="nmgd" min="0">
+            </div>
+        </td>
+        <td>
+            <div class="comment">
+                <p>Nasi Minyak Gulai Daging<br>RM 6.50</p>
+                <a href="comment.php" class="comment" name="nasiminyakgulaidaging">komeng</a>
+            </div>
+        </td>
+        </tr>
+        <tr>
+            <td>
+            <div class="mat">
+            <img src="nasdag.jpg" class="rounded-image" alt="Item Name" id="item_name">
+            <input class="bang" type="number" name="nasiminyakayamgoreng" id="nmag" min="0">
+            </div>
+            </td>
+            <td>
+                <div class="comment">
+                    <p>Nasi Minyak Ayam Goreng<br>RM 6.50</p>
+                    <a href="comment.php" class="comment" name="nasiminyakayamgoreng">komeng</a>
+                </div>
+            </td>
+        </tr>
+        <td>
+            <div class="mat">
+                <img src="nasdag.jpg" class="rounded-image" name="item_name"  id="item_name">
+                <input class="bang" type="number" name="nasiminyakayammasakmerah" id="nmamm" min="0">
+            </div>
+        </td>
+        <td>
+            <div class="comment">
+                <p>Nasi Minyak Ayam Masak Merah<br>RM 7.00</p>
+                <a href="comment.php" class="comment" name="nasiminyakayammasakmerah">komeng</a>
+            </div>
+        </td>
+        </tr>
+        <tr>
+            <td>
+            <div class="mat">
+            <img src="nasdag.jpg" class="rounded-image" alt="Item Name" id="item_name">
+            <input class="bang" type="number" name="pulutkuningikan" id="pki" min="0">
+            </div>
+            </td>
+            <td>
+                <div class="comment">
+                    <p>Pulut Kuning Ikan<br>RM 5.00</p>
+                    <a href="comment.php" class="comment" name="pulutkuningikan">komeng</a>
+                </div>
+            </td>
+        </tr>
+        <td>
+            <div class="mat">
+                <img src="nasdag.jpg" class="rounded-image" name="item_name"  id="item_name">
+                <input class="bang" type="number" name="pulutkuningayamgorang" id="pka" min="0">
+            </div>
+        </td>
+        <td>
+            <div class="comment">
+                <p>Pulut Kuning Ayam Gorang<br>RM 6.50</p>
+                <a href="comment.php" class="comment" name="pulutkuningayamgorang">komeng</a>
+            </div>
+        </td>
+        </tr>
+        <tr>
+            <td>
+            <div class="mat">
+            <img src="nasdag.jpg" class="rounded-image" alt="Item Name" id="item_name">
+            <input class="bang" type="number" name="pulutkuninggulaidaging" id="pkgd" min="0">
+            </div>
+            </td>
+            <td>
+                <div class="comment">
+                    <p>Pulut Kuning Gulai Daging<br>RM 6.50</p>
+                    <a href="comment.php" class="comment" name="pulutkuninggulaidaging">komeng</a>
+                </div> -->
+            </td>
+        </tr>
+        <!-- Add more food items here if needed -->
+        <tr>
+            <td>
+                <div>
+                    <h3>Drinks</h3><hr>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="mat">
+                    <img src="" class="rounded-image">
+                    <input class="bang" type="number" value="" id="" name="" min="0">
+                </div>
+            </td>
+            <td>
+                <div class="">
+                    <p>Tea Peng Ombak Rindu<br>RM 6.50</p>
+                </div>
+            </td>
+        </tr>
+        <button class="btnCART" type="submit"><b>Add</b></button>
+    </form>
+</table>
+<div id="popup" class="popup">
+  <span id="popup-message"></span>
+</div>
+<script>
+   function data_validate() {
+    var nasidagangayam = document.getElementById("nda").value;
+    var nasidagangikan = document.getElementById("ndi").value;
+    var msg = "";
+
+    if (nasidagangayam.length == 0 && nasidagangikan.length == 0) {
+        alert("Make an order");
+        return false;
+    } else {
+        alert("Your order has been taken");
+    } 
+    return true; // Prevent form submission for this example
+}
+</script>
+
+</body>
+</html>

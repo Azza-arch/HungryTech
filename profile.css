@@ -1,0 +1,113 @@
+body {
+    background-color: #F3F3F3;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: auto;
+    text-align: center;
+}
+
+header {
+    font-size: 15px;
+    line-height: 16px;
+    letter-spacing: 0em;
+    color: white;
+    background-color: rgb(104, 104, 104);
+    padding: 6px;
+    text-align: center;
+    box-shadow: rgba(59, 59, 59, 0.2) 0px 2px 8px 0px;
+}
+
+nav {
+    position: absolute;
+    width: 100%;
+    top: 40px; /* Adjust the top position to move the navbar down */
+}
+
+td {
+    padding: 7px;
+}
+
+.mmenu {
+    z-index: 9;
+    text-align: center;
+    position: relative;
+    color:rgb(20, 20, 20);
+    margin: auto;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    width: 60px;
+    height: 30px;
+    font-size: 20px;
+}
+
+button:focus {
+    border: none;
+    outline: none;
+}
+
+.btn {
+    background: white;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 30px;
+    color: #FFD643; 
+}
+
+.bang {
+    border-radius: 30px;
+    border: none;
+    text-align: center;
+    padding: 1rem;
+}
+
+.sub {
+    border-radius: 30px;
+    border: none;
+    text-align: center;
+    padding: 1rem;
+    background: rgb(24, 24, 24);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 30px;
+    color: white;
+    cursor: pointer;
+}
+
+.logo {
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+}
+
+table {
+    margin: auto;
+}
+
+@media only screen and (max-width: 620px) {
+    /* For mobile phones */
+    body, header, nav, .mmenu {
+        width: 100%;
+    }
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    position: relative;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.list {
+    list-style: none;
+    display: flex;
+}
+
+.center {
+    margin: auto;
+}

@@ -1,0 +1,83 @@
+body {
+    background-color: #F3F3F3;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-image: url("pattern.jpg");
+    background-repeat: repeat;
+}
+
+header {
+    left: -61.54px;
+    top: 0;
+    line-height: 19px;
+    letter-spacing: 0em;
+    color: white;
+    background-color: #4e8a9b;
+    padding: 30px;
+    padding-bottom: 200px;
+    text-align: center;
+    height: 100px;
+    width: 100%;
+}
+
+
+.login {
+    position: absolute;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    background-color: white;
+    border-radius: 30px;
+    padding: 100px;
+    width: 50%;
+    text-align: center;
+    left: 20%;
+    top: 250px;
+    height: 200px;
+}
+
+.isi {
+    border-radius: 30px;
+    padding: 5px;
+    margin: 5px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #dadada;
+    width: 300px;
+}
+
+td {
+    padding: 7px;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    width: 60px;
+    height: 30px;
+    left: 120px;
+    bottom: 50px;
+}
+
+button:focus {
+    border: none;
+    outline: none;
+}
+
+.btn1 {
+    cursor: pointer;
+    position: absolute;
+    background: #1E1E1E;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 30px;
+    color: white;
+    width: 100px;
+    padding: 10px;
+    bottom: 50px;
+    right: 250px;
+    border: none;
+}
+
+.create {
+    position: absolute;
+    bottom: 30px;
+    left: 300px;
+    text-decoration: none;
+}

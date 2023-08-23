@@ -1,0 +1,153 @@
+body {
+    background-color: #F3F3F3;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: auto;
+    text-align: center;
+    background-image: url("pattern.jpg");
+    background-repeat: repeat;
+    background-size: 50%;
+  }
+  
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    font-size: 15px;
+    line-height: 16px;
+    letter-spacing: 0em;
+    color: rgb(0, 0, 0);
+    background-color:#B3DEE5;
+    padding: 6px;
+    text-align: center;
+    border-radius: -30px;
+    box-shadow: rgba(59, 59, 59, 0.2) 0px 2px 8px 0px;
+    z-index: 999; /* Add a high z-index to keep the header on top */
+  }
+  
+  .edit{
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    background: white;
+    color: #1E1E1E;
+    border-radius: 30px;
+  }
+
+  p {
+    font-family: 'Courier New', Courier, monospace;
+  }
+  
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #B3DEE5;
+  }
+  
+  .logo-wrapper {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo-wrapper img {
+    height: 50px;
+    width: 25px;
+    margin-right: 10px;
+  }
+
+  .navbar a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  .list {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+  }
+  
+  .mmenu-container {
+    margin-top: 50px; /* Adjust the margin-top to create space for the header */
+    margin-bottom: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px; /* Add gap between mmenu elements */
+    justify-content: flex-start;
+  }
+  
+  .mmenu {
+    text-align: center;
+    margin: 10px; /* Add margin around each mmenu element */
+    position: relative;
+    z-index: 9;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 30px;
+    color: rgb(20, 20, 20);
+    background-color: white;
+    height: 227px;
+    width: 193px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .mmenu img{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+  }
+  
+  button {
+    cursor: pointer;
+    border: none;
+    width: 60px;
+    height: 30px;
+    left: 120px;
+    bottom: 20px;
+  }
+  
+  button:focus {
+    border: none;
+    outline: none;
+  }
+  
+  .gap {
+    margin-bottom: 10px; /* Adjust the value as needed for the desired gap */
+  }
+  
+  .bang {
+    border-radius: 7px;
+    border: none;
+    text-align: center;
+    width: 50px;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  
+  .section {
+    color: white;
+    position: relative;
+    background-color: #31525B;
+    height: 250px;
+    margin-top: 25px; /* Adjust the margin-top to create space for the header */
+  }
+  
+  .section h1 {
+    font-weight: bold;
+    font-size: 40px;
+    position: absolute;
+    top: 20%;
+    right: 0;
+    width: 20%;
+    text-align: center;
+  }
+  
+  .section h2 {
+    position: absolute;
+    top: 45%;
+    right: 0;
+    width: 20%;
+    text-align: center;
+  }
